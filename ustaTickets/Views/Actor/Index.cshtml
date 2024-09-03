@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Actor>
+@{
+    ViewData["Tilte"] = "List of Actors";
+
+}
+
+<div class="row text-white">
+    <div class="col-md-8 offset-md-2">
+        <table class="table table-dark table-hover border border-info">
+            <thead>
+            <th>Picture Profile</th>
+            <th>@Html.DisplayNameFor(m => m.FullName)</th>
+            <th>@Html.DisplayNameFor(m => m.Bio)</th>
+            <th>Actions</th>
+            </thead>
+            <tbody>
+                @foreach (var actor in Model)
+                {
+                    <tr>
+                        <td class="aling-middle">
+                            <img class="rounded" src="@Html.DisplayFor(mi => actor.ProfilePictureURL)" alt="@Html.DisplayFor(mi => actor.FullName)" style="max-width: 100px" />
+
+                        </td>
+                        <td class="text-center"><strong> @actor.FullName</strong></td>
+                        <td class="aling-middle"> @actor.Bio</td>
+                        <td>
+                            <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Edit</a>
+                            <a class="btn btn-outline-info"><i class="bi bi-eye"></i>Details</a>
+                            <a class="btn btn-danger text-white"><i class="bi bi-trash"></i>Delete</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="text-white mb-4" style="position: fixed; right: 25px; bottom: 35px;">
+    <a asp-controller="Actor" asp-action="Create" class="btn btn-success">
+        <i class="bg-info bi-plus-circle"></i> Add New
+    </a>
+
+</div>
+

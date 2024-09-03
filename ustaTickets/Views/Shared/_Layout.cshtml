@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head class="text-white">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ustaTickets</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ustaTickets.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-dark text-white">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark text-white border-bottom box-shadow mb-3">
+            <div class="container-fluid  text-white">
+                <ul class="nav nav-pills">
+                 <li class="nav-item">
+                            <a class="nav-link active" aria-current="ustaTickets" href="Home">ustaTickets</a>
+                            </li>
+                            </ul>             
+               <!--  <a class="nav nav-pills" asp-area="" asp-controller="Home" asp-action="Index">ustaTickets</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+
+                  <!-- <ul id="header">
+            <li id="stack" tabindex="1" class="selected">
+                Stack
+            </li>
+            <li id="query" tabindex="2" class="">
+                Query
+            </li>
+            <li id="cookies" tabindex="3" class="">
+                Cookies
+            </li>
+            <li id="headers" tabindex="4" class="">
+                Headers
+            </li>
+            <li id="routing" tabindex="5" class="">
+                Routing
+            </li>
+        </ul> -->
+                      <ul class="nav nav-pills">
+                          <li class="nav-item">
+                            <a class="nav-link" href="Cinema">Cinema</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="Director">Director</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="Actor">Actor</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="Movie">Movie</a>
+                          </li>
+                        </ul>
+
+                        <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="What are you searching" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container text-white">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - ustaTickets - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Director>
+
+@{
+     ViewData["Tilte"] = "List of Directors";
+}
+
+    <div class="row text-white">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-dark table-hover border border-info">
+                <thead>
+                <th>Director Profile</th>
+                <th>@Html.DisplayNameFor(m => m.FullName)</th>
+                <th>@Html.DisplayNameFor(m => m.bio)</th>
+                <th>Actions</th>
+                </thead>
+                <tbody>
+                    @foreach (var director in Model)
+                    {
+                        <tr>
+                            <td class="aling-middle">
+                                <img class="rounded" src="@Html.DisplayFor(mi => director.ProfilePictureURL)" alt="@Html.DisplayFor(mi => director.FullName)" style="max-width: 100px" />
+
+                            </td>
+                            <td class="text-center"><strong> @director.FullName</strong></td>
+                            <td class="aling-middle"> @director.bio</td>
+                            <td>
+                                <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Edit</a>
+                                <a class="btn btn-outline-info"><i class="bi bi-eye"></i>Details</a>
+                                <a class="btn btn-danger text-white"><i class="bi bi-trash"></i>Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
